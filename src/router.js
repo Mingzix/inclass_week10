@@ -1,7 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-
+//0712
+import Products from "./views/ProductsList.vue";
+//0719
+import SingleProduct from "./views/SingleProduct.vue";
+//0719 link to inventory-step02
+import ProductsInventory from "./views/ProductsInventory.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -11,16 +15,22 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Products
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      //
+      path: "/product/:id",
+      name: "single-product",
+      component: SingleProduct,
+      props: true
+      //
+    },
+    //0719 link to inventory-step01
+    {
+      path: "/inventory",
+      name: "products-inventory",
+      component: ProductsInventory
+      //it's not dynamic,so no need for props
     }
   ]
 });

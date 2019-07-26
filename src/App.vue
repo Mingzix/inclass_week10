@@ -1,13 +1,21 @@
 <template>
   <div id="app">
+    <!---0712-->
+    <!----button--->
+    <a href="#" class="btn btn-primary">button</a>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>|
+      <!---update inventory step03--->
+      <router-link :to="{name: 'products-inventory'}">Inventory</router-link>|
     </div>
-    <router-view />
+    <router-view/>
   </div>
 </template>
-
+<script>
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+export default {};
+</script>
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
